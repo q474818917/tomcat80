@@ -85,6 +85,7 @@ public abstract class AbstractProtocol<S> implements ProtocolHandler,
 
 
     /**
+     * 处理底层的网络IO，与protocol对应
      * Endpoint that provides low-level network I/O - must be matched to the
      * ProtocolHandler implementation (ProtocolHandler using BIO, requires BIO
      * Endpoint etc.).

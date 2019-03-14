@@ -56,6 +56,7 @@ import org.xml.sax.helpers.AttributesImpl;
 
 
 /**
+ * 主要用来解析server.xml
  * <p>A <strong>Digester</strong> processes an XML input stream by matching a
  * series of element nesting patterns to execute Rules that have been added
  * prior to the start of parsing.  This package was inspired by the

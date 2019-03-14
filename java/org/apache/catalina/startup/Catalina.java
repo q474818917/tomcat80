@@ -267,6 +267,7 @@ public class Catalina {
 
 
     /**
+     * 创建Digester对象匹配server对应标签
      * Create and configure the Digester we will be using for startup.
      */
     protected Digester createStartDigester() {
@@ -497,10 +498,12 @@ public class Catalina {
 
         // Create and execute our Digester
         Digester digester = createStartDigester();
-
+        
+        //开始 ===========================================此处的file就是server.xml,获取inputstream流
         InputSource inputSource = null;
         InputStream inputStream = null;
-        File file = null;
+        
+        File file = null;	
         try {
             try {
                 file = configFile();
@@ -557,11 +560,11 @@ public class Catalina {
                 }
                 return;
             }
-
+            
             try {
                 inputSource.setByteStream(inputStream);
                 digester.push(this);
-                digester.parse(inputSource);
+                digester.parse(inputSource);	//这里实例化了server-standardServer
             } catch (SAXParseException spe) {
                 log.warn("Catalina.start using " + getConfigFile() + ": " +
                         spe.getMessage());
@@ -579,6 +582,7 @@ public class Catalina {
                 }
             }
         }
+        //结束 ===========================================此处的file就是server.xml,获取inputstream流
 
         getServer().setCatalina(this);
         getServer().setCatalinaHome(Bootstrap.getCatalinaHomeFile());

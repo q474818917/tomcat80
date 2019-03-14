@@ -32,6 +32,7 @@ import org.apache.juli.logging.Log;
 import org.apache.juli.logging.LogFactory;
 
 /**
+ * 用于Catalina classLoader的工厂类
  * <p>Utility class for building class loaders for Catalina.  The factory
  * method requires the following parameters in order to build a new class
  * loader (with suitable defaults in all cases):</p>

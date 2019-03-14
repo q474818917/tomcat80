@@ -67,6 +67,7 @@ public class Connector extends LifecycleMBeanBase  {
         // Instantiate protocol handler
         ProtocolHandler p = null;
         try {
+        	//默认NIO protocol，通过Class.forName().newInstance()创建该对象
             Class<?> clazz = Class.forName(protocolHandlerClassName);
             p = (ProtocolHandler) clazz.getDeclaredConstructor().newInstance();
         } catch (Exception e) {
