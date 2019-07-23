@@ -9,10 +9,6 @@
 
 ## tomcat启动流程分析
 [tomcat启动流程分析](md/StartSequence.md)
-+ Bootstrap(main方法) -> Catalina(load方法) -> Catalina(start方法) -> Server(init) 接下来对应的容器的生命周期
-+ Server(init) -> LifecycleBase(init -> initInternal) -> StandardServer(initInternal) -> LifecycleMBeanBase(initInternal)
-+ StandardServer(initInternal) -> Service(init) -> LifecycleBase(init -> initInternal) -> StandardService(initInternal) -> LifecycleMBeanBase(initInternal) 以下类推
-
 
 ## 源码解析：
 + 运行机制：

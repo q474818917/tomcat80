@@ -1,4 +1,10 @@
 ## tomcat启动流程
++ Bootstrap(main方法) -> Catalina(load方法) -> Catalina(start方法) -> Server(init) 接下来对应的容器的生命周期
++ Server(init) -> LifecycleBase(init -> initInternal) -> StandardServer(initInternal) -> LifecycleMBeanBase(initInternal)
++ StandardServer(initInternal) -> Service(init) -> LifecycleBase(init -> initInternal) -> StandardService(initInternal) -> LifecycleMBeanBase(initInternal) 以下类推
+
+
+## 官方文档
 + 1、命令行启动类：org.apache.catalina.startup.Bootstrap
 	+ a、初始化ClassLoader：commonLoader、sharedLoader、catalinaLoader
 	+ b、通过catalinaLoader加载org.apache.catalina.startup.Catalina
